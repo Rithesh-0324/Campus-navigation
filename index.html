@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <img src="nitte-nmamit-logo.png" alt="site logo" width="450" height="60">
+
+                    </h1>
+                    <span class="tagline">
+                        CAMPUS CONNECT: Engineering College Directory
+                    </span>
+                </div>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#blocks">Blocks</a>
+                    <a href="#contacts">Contacts</a>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+    <main id ="home">
+        <section id="home-page">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2>Welcome To Campus Connect</h2>
+                            <p>Your comprehensive navigation system for our engineering college campus. Find faculty offices, classrooms, labs, and administrative services with ease.</p>
+                            <div class="hero-stats">
+                                <div class="stat">
+                                    <span class="stat-number">5</span>
+                                    <span class="stat-label">Academic Blocks</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">80+</span>
+                                    <span class="stat-label">Classrooms And Labs</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">100+</span>
+                                    <span class="stat-label">Faculty offices</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="campus.jpeg" alt="">
+                        </div>
+                </div>
+            </section>
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <h3>Find Faculty Or Classrooms</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="search for  faculty names , room numbers , departments">
+                        <button id="search-button" class="btn btn-primary">Search</button>
+                    </div>
+                    <div class="search-results" class="search result hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ac block section -->
+        <section class="block-section" id="blocks">
+            <div class="container">
+                <h3>Academic Blocks</h3>
+                <div class="blocks-grid" id="blocks-grid" >
+                    <div class="block-card">
+                        <img src="cvraman.jpeg" alt="cv raman">
+                        <div class="block-card-content">
+                            <h4>CV RAMAN</h4>
+                            <p>Advanced electrical engineering facility with power systems labs and electronics workshops.</p>
+                        </div>
+                    </div>
+                    <div class="block-card">
+                        <img src="ramanujan.jpg" alt="RAMANUJAN">
+                        <div class="block-card-content">
+                            <h4>RAMANUJAN</h4>
+                            <p><p>One of the oldest building in the campus, contains the library</p></p>
+                        </div>
+                    </div>
+                    <div class="block-card">
+                        <img src="visvesvaraya.jpeg" alt="VISVESVARAYA">
+                        <div class="block-card-content">
+                            <h4>VISVESVARAYA</h4>
+                            <p>State-of-the-art facility for Computer Science with modern labs and technology infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="block-card">
+                        <img src="apj.jpeg" alt="APJ ABDUL KALAM">
+                        <div class="block-card-content">
+                            <h4>APJ ABDUL KALAM</h4>
+                            <P>Main administrative building housing principal's office, admissions, and student services.</P>
+                        </div>
+                    </div>
+                    <div class="block-card">
+                        <img src="atal.jpeg" alt="ATAL INCUBATION CENTER">
+                    </div>
+                    
+                </div>
+        </section>
+    </section>
+
+    <!--Block details-->
+
+    <section id="block-page" class="block-page hidden">
+        <div class="container">
+            <div class="block-header">
+                <button id="back-btn" class="btn btn--secondary"><- Back To Home</button>
+                <div class="block-info">
+                    <img id="block-image" src alt class="block-image">
+                    <div class="block-details">
+                        <h2 id="block-name"></h2>
+                        <p id="block-description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="floors-section">
+                <h3>Select Floor</h3>
+                <div class="floors-button">
+                    <button class="floor-btn" data-floor="ground">Ground Floor</button>
+                    <button class="floor-btn" data-floor="first">First Floor</button>
+                    <button class="floor-btn" data-floor="second">Second Floor</button>
+                    <button class="floor-btn" data-floor="third">Third Floor</button>
+                    </div>
+            </div>
+
+
+                    <div class="rooms-section">
+                    <h3 id="floor-title">Select a floor to view rooms</h3>
+
+                    <div id="rooms-grid" class="rooms-grid"></div>
+                </div>
+                </div>
+            
+    </section>
+
+    </main>
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Campus Connect</h4>
+                    <p>Your comprehensive campus navigation system</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#blocks" class="nav-link">Academic Blocks</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Engineering College<br>123 Campus Drive<br>Phone: (555) 123-4567<br>Email: info@college.edu</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Campus Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
