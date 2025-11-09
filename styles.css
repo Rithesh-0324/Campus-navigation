@@ -274,10 +274,21 @@ body {
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-
-  
-  
 }
+.block-card {
+  border-radius: 12px;
+  overflow: hidden; /* ensures image corners stay rounded */
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(2, 0, 0, 0.1); /* subtle base shadow */
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* smooth animation */
+  cursor: pointer;
+}
+
+.block-card:hover {
+  transform: scale(1.05); /* slightly enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* deeper shadow on hover */
+}
+
 
 .block-details h2 {
   font-size: 32px;
