@@ -23,7 +23,8 @@
                 <nav class="nav">
                     <a href="#home">Home</a>
                     <a href="#blocks">Blocks</a>
-                    <a href="#contacts">Contacts</a>
+                    <a href="#contact">Contacts</a>
+                    <button id="login-btn" class="nav-login-btn btn">Login</button>
                 </nav>
             </div>
 
@@ -61,12 +62,15 @@
             <div class="container">
                 <div class="search-container">
                     <h3>Find Faculty Or Classrooms</h3>
-                    <div class="search-box">
-                        <input type="text" id="search-input" placeholder="search for  faculty names , room numbers , departments">
+
+                    <div class="search-row">
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Enter the faculty name or class room">
+                        </div>
                         <button id="search-button" class="btn btn-primary">Search</button>
                     </div>
-                    <div class="search-results" class="search result hidden">
-                    </div>
+
+                    <div class="search-results hidden"></div>
                 </div>
             </div>
         </section>
@@ -76,35 +80,37 @@
                 <h3>Academic Blocks</h3>
                 <div class="blocks-grid" id="blocks-grid" >
                     <div class="block-card">
-                        <img src="cvraman.jpeg" alt="cv raman">
+                        <img src="CVRAMAN.png" alt="cv raman">
                         <div class="block-card-content">
                             <h4>CV RAMAN</h4>
                             <p>Advanced electrical engineering facility with power systems labs and electronics workshops.</p>
                         </div>
                     </div>
                     <div class="block-card">
-                        <img src="ramanujan.jpg" alt="RAMANUJAN">
+                        <img src="RAMANUJAN.png" alt="RAMANUJAN" width="486px" height="400px">
                         <div class="block-card-content">
                             <h4>RAMANUJAN</h4>
                             <p><p>One of the oldest building in the campus, contains the library</p></p>
                         </div>
                     </div>
                     <div class="block-card">
-                        <img src="visvesvaraya.jpeg" alt="VISVESVARAYA">
+                        <img src="VISVESVARAYA.png" alt="VISVESVARAYA">
                         <div class="block-card-content">
                             <h4>VISVESVARAYA</h4>
                             <p>State-of-the-art facility for Computer Science with modern labs and technology infrastructure.</p>
                         </div>
                     </div>
                     <div class="block-card">
-                        <img src="apj.jpeg" alt="APJ ABDUL KALAM">
+                        <img src="APJ.png" alt="APJ ABDUL KALAM">
                         <div class="block-card-content">
                             <h4>APJ ABDUL KALAM</h4>
                             <P>Main administrative building housing principal's office, admissions, and student services.</P>
                         </div>
                     </div>
                     <div class="block-card">
-                        <img src="atal.jpeg" alt="ATAL INCUBATION CENTER">
+                        <img src="ATAL.png" alt="ATAL INCUBATION CENTER">
+                        <h4>ATAL INCUBATION CENTER</h4>
+                            <P> administrative building housing incubation centers and industrial application labs.</P>
                     </div>
                     
                 </div>
@@ -163,7 +169,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>Engineering College<br>123 Campus Drive<br>Phone: (555) 123-4567<br>Email: info@college.edu</p>
+                    <p>NMAMIT , Nitte<br>Phone: (555) 123-4567<br>Email: principal@nmamit.in</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -172,5 +178,24 @@
         </div>
     </footer>
     <script src="app.js"></script>
+    <!-- Login popup -->
+    <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+        <div class="modal-content">
+            <button id="login-close" class="modal-close" aria-label="Close">×</button>
+            <h2 id="login-title">Sign In</h2>
+            <form id="login-form">
+                <label for="login-username">Username</label>
+                <input id="login-username" name="username" type="text" placeholder="Enter username" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" placeholder="Enter password" required>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn--primary">Login</button>
+                    <button type="button" id="login-cancel" class="btn btn--secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

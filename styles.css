@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif; /* Simple, common font */
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #e0e0e0; /* Light gray background */
   color: #2d3748; /* Dark gray text */
 }
 
@@ -155,22 +155,54 @@ body {
 }
 
 .search-container {
+   display: flex;
+    flex-direction: column;
+    align-items: center; /* center contents horizontally */
+    gap: 1rem;
+    padding: 1rem 0;
   max-width: 700px;
   margin: 0 auto; /* Centers the search box */
   text-align: center;
 }
-
-.search-box {
+.search-row {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.search-input {
-  flex: 1; /* Makes the input field take most of the space */
-  padding: 12px;
+.search-box {
+  flex: 1 1 0;
+  max-width: 760px;
+  background: #ffffff;
+  border-radius: 32px; /* rounded corners for the whole white bar */
+  padding: 6px 10px; /* inner spacing */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+#search-input {
+  width: 100%;
+  display: block;
+  padding: 12px 16px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  outline: none;
+  background: transparent;
+  color: #2d3748;
+  border-radius: 20px; /* keep inner shape comfortable */
+}
+
+#search-button {
+     margin-left: 10px;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+  background-color: #2c7be5;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Search results box (hidden by default) */
@@ -228,6 +260,23 @@ body {
   object-fit: cover;
   border-radius: 8px;
   border: 3px solid #d69e2e; /* Accent Yellow */
+}
+.block-card {
+  border-radius: 12px;
+  overflow: hidden; /* ensures the image is clipped to the card radius */
+  background: #fff;
+  padding: 10px;
+}
+
+.block-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+
+  
+  
 }
 
 .block-details h2 {
@@ -329,6 +378,72 @@ body {
   display: none !important; /* Hides elements */
 }
 
+/* --- (login popup) --- */
+.modal {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #1a365d;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* small style for the header login button */
+.nav-login-btn {
+  margin-left: 12px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
 /*  Responsive Design  */
 @media (max-width: 768px) {
   /* Stack header items */
@@ -380,4 +495,10 @@ body {
     flex-direction: column;
     text-align: center;
   }
+   .search-box {
+        max-width: 92%;
+    }
+    #search-button {
+        padding: 8px 12px;
+    }
 }
