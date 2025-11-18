@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Campus Connect main UI layout -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +9,7 @@
 </head>
 <body>
     
+    <!-- Site header with branding + nav -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -32,6 +34,7 @@
     </header>
     <main id ="home">
         <section id="home-page">
+            <!-- Hero welcome strip -->
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
@@ -58,56 +61,67 @@
                         </div>
                 </div>
             </section>
+        <!-- Global search bar -->
         <section class="search-section">
-            <div class="container">
-                <div class="search-container">
-                    <h3>Find Faculty Or Classrooms</h3>
+    <div class="container">
+        <div class="search-container">
+            <h3>Find Faculty Or Classrooms</h3>
 
-                    <div class="search-row">
-                        <div class="search-box">
-                            <input type="text" id="search-input" placeholder="Enter the faculty name or class room">
-                        </div>
-                        <button id="search-button" class="btn btn-primary">Search</button>
-                    </div>
+            <div class="search-row">
+                <div class="search-box" style="position: relative;">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Enter the faculty name or class room">
 
-                    <div class="search-results hidden"></div>
+                    <!-- 🔥 REAL-TIME SEARCH SUGGESTIONS DROPDOWN -->
+                    <div id="search-suggestions" class="search-suggestions hidden"></div>
                 </div>
+
+                <button id="search-button" class="btn btn-primary">Search</button>
             </div>
-        </section>
+
+            <div class="search-results hidden"></div>
+        </div>
+    </div>
+</section>
+
         <!-- academic  block section -->
+        <!-- Academic block cards -->
         <section class="block-section" id="blocks">
             <div class="container">
                 <h3>Academic Blocks</h3>
                 <div class="blocks-grid" id="blocks-grid" >
-                    <div class="block-card">
+
+                    <div class="block-card" data-block-id="1">
                         <img src="CVRAMAN.png" alt="cv raman">
                         <div class="block-card-content">
                             <h4>CV RAMAN</h4>
                             <p>Advanced electrical engineering facility with power systems labs and electronics workshops.</p>
                         </div>
                     </div>
-                    <div class="block-card">
+                    <div class="block-card" data-block-id="2">
                         <img src="RAMANUJAN.png" alt="RAMANUJAN" width="486px" height="400px">
                         <div class="block-card-content">
                             <h4>RAMANUJAN</h4>
                             <p><p>One of the oldest building in the campus, contains the library</p></p>
                         </div>
                     </div>
-                    <div class="block-card">
+                    <div class="block-card" data-block-id="3">
                         <img src="VISVESVARAYA.png" alt="VISVESVARAYA">
                         <div class="block-card-content">
                             <h4>VISVESVARAYA</h4>
                             <p>State-of-the-art facility for Computer Science with modern labs and technology infrastructure.</p>
                         </div>
                     </div>
-                    <div class="block-card">
+                    <div class="block-card" data-block-id="4">
                         <img src="APJ.png" alt="APJ ABDUL KALAM">
                         <div class="block-card-content">
                             <h4>APJ ABDUL KALAM</h4>
                             <P>Main administrative building housing principal's office, admissions, and student services.</P>
                         </div>
                     </div>
-                    <div class="block-card">
+                    <div class="block-card" data-block-id="5">
                         <img src="ATAL.png" alt="ATAL INCUBATION CENTER">
                         <h4>ATAL INCUBATION CENTER</h4>
                             <P> administrative building housing incubation centers and industrial application labs.</P>
@@ -117,41 +131,53 @@
         </section>
     </section>
 
-    <!--Block details-->
+<!--Block details-->
+<!-- Dynamic block details view -->
+<section id="block-page" class="block-page hidden">
+  <div class="container">
 
-    <section id="block-page" class="block-page hidden">
-        <div class="container">
-            <div class="block-header">
-                <button id="back-btn" class="btn btn--secondary"><- Back To Home</button>
-                <div class="block-info">
-                    <img id="block-image" src alt class="block-image">
-                    <div class="block-details">
-                        <h2 id="block-name"></h2>
-                        <p id="block-description"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="floors-section">
-                <h3>Select Floor</h3>
-                <div class="floors-button">
-                    <button class="floor-btn" data-floor="ground">Ground Floor</button>
-                    <button class="floor-btn" data-floor="first">First Floor</button>
-                    <button class="floor-btn" data-floor="second">Second Floor</button>
-                    <button class="floor-btn" data-floor="third">Third Floor</button>
-                    </div>
-            </div>
+    <!-- Header -->
+    <div class="block-header">
+      <button id="back-btn" class="btn btn--secondary"><- Back To Home</button>
 
+      <div class="block-info">
+        <img id="block-image" class="block-image" alt="">
+        <div class="block-details">
+          <h2 id="block-name"></h2>
+          <p id="block-description"></p>
+        </div>
+      </div>
+    </div>
 
-                    <div class="rooms-section">
-                    <h3 id="floor-title">Select a floor to view rooms</h3>
+    <!-- Floors Section (Dynamic Buttons) -->
+    <div class="floors-section">
+      <h3>Select Floor</h3>
+      <div id="floor-buttons" class="floors-button">
+        <!-- Floor buttons will be inserted here by JS -->
+      </div>
+    </div>
 
-                    <div id="rooms-grid" class="rooms-grid"></div>
-                </div>
-                </div>
-            
-    </section>
+    <!-- Floor Title -->
+    <h3 id="floor-title" class="floor-title">Select a floor to view details</h3>
+
+    <!-- Faculty Section -->
+    <h3 class="faculty-heading">Faculty on this Floor</h3>
+    <div id="faculty-container" class="faculty-container">
+      <!-- Faculty cards will load here -->
+    </div>
+
+    <!-- Rooms Section -->
+    <h3 class="rooms-heading">Rooms & Labs</h3>
+    <div id="rooms-container" class="rooms-container">
+      <!-- Room cards will load here -->
+    </div>
+
+  </div>
+</section>
+
 
     </main>
+    <!-- Static footer info -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-content">
